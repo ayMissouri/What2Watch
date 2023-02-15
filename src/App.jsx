@@ -1,9 +1,11 @@
 import { useState } from "react";
-import './App.css'
+import "./App.css";
+import Modal from "./components/modal";
 
 function App() {
   const [currentSearch, setCurrentSearch] = useState();
   const [searchText, setSearchText] = useState("");
+  const [openModal, setOpenModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState([]);
 
   const onChange = (e) => {
@@ -49,6 +51,10 @@ function App() {
 
   return (
     <div className="App">
+      {openModal && (
+        <Modal closeModal={setOpenModal} selectedMovie={selectedMovie} />
+      )}
+
       <div className="search">
         <input
           type="text"
@@ -132,6 +138,7 @@ function App() {
                         id: item.id,
                         type: item.media_type,
                       }));
+                      setOpenModal(true);
                     }}
                   >
                     <img src={poster} alt={name} /> <h2>{name}</h2>{" "}
@@ -144,7 +151,7 @@ function App() {
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
