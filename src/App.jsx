@@ -8,6 +8,41 @@ function App() {
     setSearchText(e.target.value);
   };
 
+  const autoComplete = (searchType, query, typeOf) => {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDVhZDk0OTA3MjE1ZTExN2ZiM2E2ODUxZTA5ZTExYyIsInN1YiI6IjYxYzU4MTk5ZTcyZmU4MDA4NTcyZmIxNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.95IxkLrZnLinOPUjX0ppd1XSzVDwDIvKA0QYlUHfjF0",
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    };
+
+    fetch(
+      `https://api.themoviedb.org/3/${searchType}/${typeOf}${query}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((data) => setCurrentSearch([data.results]))
+      .catch((err) => console.error(err));
+  };
+
+  const getList = (searchType, query) => {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDVhZDk0OTA3MjE1ZTExN2ZiM2E2ODUxZTA5ZTExYyIsInN1YiI6IjYxYzU4MTk5ZTcyZmU4MDA4NTcyZmIxNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.95IxkLrZnLinOPUjX0ppd1XSzVDwDIvKA0QYlUHfjF0",
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    };
+
+    fetch(`https://api.themoviedb.org/3/${searchType}/${query}`, options)
+      .then((response) => response.json())
+      .then((data) => setCurrentSearch([data.items]))
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="App">
       <div className="search">
