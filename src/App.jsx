@@ -2,7 +2,9 @@ import { useState } from "react";
 import './App.css'
 
 function App() {
+  const [currentSearch, setCurrentSearch] = useState();
   const [searchText, setSearchText] = useState("");
+  const [selectedMovie, setSelectedMovie] = useState([]);
 
   const onChange = (e) => {
     setSearchText(e.target.value);
@@ -43,6 +45,8 @@ function App() {
       .catch((err) => console.error(err));
   };
 
+  const selected = document.getElementById("type-selector");
+
   return (
     <div className="App">
       <div className="search">
@@ -77,6 +81,67 @@ function App() {
         >
           Search
         </button>
+      </div>
+      <div className="content">
+        <ul id="list">
+          {currentSearch
+            ? currentSearch[0].map((item, index) => {
+                const name = item.name ? item.name : item.title;
+
+                let poster = "";
+                if (
+                  item.poster_path !== undefined &&
+                  item.poster_path !== null
+                ) {
+                  poster = `https://image.tmdb.org/t/p/original/${item.poster_path}`;
+                } else if (
+                  item.profile_path !== undefined &&
+                  item.profile_path !== null
+                ) {
+                  poster = `https://image.tmdb.org/t/p/original/${item.profile_path}`;
+                } else {
+                  poster =
+                    "http://www.theprintworks.com/wp-content/themes/psBella/assets/img/film-poster-placeholder.png";
+                }
+
+                let year = "";
+                if (
+                  item.first_air_date !== undefined &&
+                  item.first_air_date.length > 3
+                ) {
+                  year = `(${item.first_air_date.toString().slice(0, 4)})`;
+                } else if (
+                  item.release_date !== undefined &&
+                  item.release_date.length > 3
+                ) {
+                  year = `(${item.release_date.toString().slice(0, 4)})`;
+                } else {
+                  year = "";
+                }
+                const type = item.media_type
+                  ? `(${item.media_type.toUpperCase()})`
+                  : "";
+                return (
+                  <li
+                    key={index}
+                    className="listItem"
+                    onClick={() => {
+                      setSelectedMovie((selectedMovie) => ({
+                        ...selectedMovie,
+                        cover: poster,
+                        id: item.id,
+                        type: item.media_type,
+                      }));
+                    }}
+                  >
+                    <img src={poster} alt={name} /> <h2>{name}</h2>{" "}
+                    <p>{year}</p>
+                    <span>{type}</span>
+                  </li>
+                );
+              })
+            : null}
+        </ul>
       </div>
     </div>
   )
