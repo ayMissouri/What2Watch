@@ -1,0 +1,178 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.bi-star-fill {
+  color: #47be61;
+}
+
+.ratingP {
+  font-size: 1em;
+  color: white;
+}
+
+.movie-card {
+  font: 14px/22px Arial, sans-serif;
+  color: #a9a8a3;
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 780px;
+  height: 700px;
+  background: #0d1013;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hero {
+  height: 290px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hero:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: #14181e;
+  // background: url("https://image.tmdb.org/t/p/original/tGwO4xcBjhXC0p5qlkw37TrH6S6.jpg");
+  z-index: -1;
+  transform: skewY(-3deg);
+  transform-origin: 0 0;
+}
+.closebtn {
+  left: 50px;
+  top: 50px;
+  color: #0d1013;
+  font-weight: bold;
+  margin: 10px 0 0 10px;
+}
+.cover {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  z-index: 2;
+  margin-left: 10px;
+}
+
+.details {
+  margin: 85px -5px -5px 275px;
+  padding: 5px;
+  //   background-color: #00000044;
+
+  .title1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 13px;
+    position: relative;
+    text-shadow: 2px 2px 2px #000000;
+    padding-right: 15px;
+    text-decoration: #47be61 underline 3px;
+  }
+
+  .ageRating {
+    background: #47be61;
+    border-radius: 5px;
+    color: #3c3617;
+    font-size: 14px;
+    padding: 0px 4px;
+    text-shadow: 0px 0px 0px #000000;
+    margin: 10px 10px 0 0;
+  }
+
+  .title2 {
+    color: #c7c1ba;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+}
+
+.movieInfoP {
+  color: #47be61;
+  display: inline;
+}
+.movieInfoSpan {
+  color: #dadada;
+}
+
+.description {
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #b1b0ac;
+}
+
+.column1 {
+  padding-left: 50px;
+  padding-top: 130px;
+  width: 220px;
+  float: left;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #47be61;
+  color: #090b0e;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 2px 0 2px 0;
+  cursor: default;
+  padding: 3px;
+  margin-right: 2px;
+  font-weight: bold;
+}
+
+.tag:hover {
+  background: #3ea053;
+}
+
+.column2 {
+  padding-left: 41px;
+  padding-top: 0px;
+  margin-left: 20px;
+  width: 480px;
+  float: left;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(6, 6, 6, 0.566);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modalContainer .body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+}
