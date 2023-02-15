@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Modal from "./components/modal";
+import Navbar from "./components/navbar";
 
 function App() {
   const [currentSearch, setCurrentSearch] = useState();
@@ -55,6 +56,8 @@ function App() {
         <Modal closeModal={setOpenModal} selectedMovie={selectedMovie} />
       )}
 
+      <Navbar autoComplete={autoComplete} getList={getList} />
+      
       <div className="search">
         <input
           type="text"
