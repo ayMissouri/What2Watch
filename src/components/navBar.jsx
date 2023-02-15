@@ -57,6 +57,7 @@ const Navbar = (props) => {
           >
             Top Grossing
           </a>
+          {/* TODO: Implement random Movie on click */}
           <a className="navBtn" onClick={() => {}}>
             Random
           </a>
@@ -79,6 +80,7 @@ const Navbar = (props) => {
           >
             Trending
           </a>
+          {/* TODO: Implement random Tv Show on click */}
           <a className="navBtn" onClick={() => {}}>
             Random
           </a>
