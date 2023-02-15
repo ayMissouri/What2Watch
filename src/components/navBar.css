@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.burger-menu {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  width: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.burger-bar {
+  width: 2.5em;
+  height: 0.25em;
+  background-color: #47be61;
+  border-radius: 0.5em;
+  z-index: 99;
+  margin-bottom: 7px;
+}
+
+.burger-menu:hover > .burger-bar {
+  background-color: #57e275;
+}
+
+.menu {
+  min-width: 250px;
+  min-height: 100%;
+  background-color: #00000069;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inherit;
+}
+
+.buttonsInNav {
+  margin-top: 8vh;
+  margin-left: 35px;
+}
+
+.navCtg {
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(225, 225, 225);
+  display: block;
+  text-decoration: #47be61 underline 3px;
+  margin-top: 25px;
+  cursor: default;
+}
+
+.navBtn {
+  font-size: 1.15em;
+  margin-left: 10px;
+  color: #51dc6f;
+  cursor: pointer;
+  display: block;
+  width: 70%;
+}
+
+.navBtn:hover {
+  color: #5af67c;
+  text-decoration: rgb(225, 225, 225) underline 3px;
+}
