@@ -16,6 +16,20 @@ function App() {
     setSearchText(e.target.value);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      if (searchText.length <= 0) {
+        const textareaSearch = document.getElementById("searchTextarea");
+        textareaSearch.classList.add("error");
+        setTimeout(function () {
+          textareaSearch.classList.remove("error");
+        }, 300);
+      } else {
+        autoComplete("search", `?query=${searchText}`, selected.value);
+      }
+    }
+  };
+
   const autoComplete = (searchType, query, typeOf) => {
     const options = {
       method: "GET",
@@ -64,6 +78,7 @@ function App() {
           type="text"
           id="searchTextarea"
           onChange={onChange}
+          onKeyDown={handleKeyDown}
           value={searchText}
           placeholder="Search..."
           required
@@ -92,7 +107,7 @@ function App() {
           Search
         </button>
       </div>
-      
+
       <div className="content">
         <ul id="list">
           {currentSearch
