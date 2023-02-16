@@ -19,7 +19,7 @@ You can view a live preview of this project [HERE](https://amissouri.com/what2wa
 
 ## Prerequisites
 
-```
+```text
 Node 16.13.1 (or later)
 Internet Access (for API access)
 TMDB api key
@@ -34,7 +34,7 @@ TMDB api key
 
 ## Installation
 
-```
+```text
 Clone this repo and do the following:
 npm ci
 put the api key from TMDB in TOKEN.json

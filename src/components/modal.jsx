@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./modal.scss";
 
-function Modal({ closeModal, selectedMovie }) {
+const Modal = ({ closeModal, selectedMovie }) => {
     
   const [movieDetails, setMovieDetails] = useState([]);
 
@@ -29,6 +29,12 @@ function Modal({ closeModal, selectedMovie }) {
       getDetails("person", selectedMovie.id);
     }
   });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal(false)
+    }
+  })
 
   return (
     <div className="modalBackground">

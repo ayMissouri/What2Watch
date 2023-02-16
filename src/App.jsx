@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Modal from "./components/modal";
 import Navbar from "./components/navbar";
-import * as data from '../TOKEN.json'
+import * as data from "../TOKEN.json";
 
 function App() {
   const [currentSearch, setCurrentSearch] = useState();
@@ -10,7 +10,7 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState([]);
 
-  const token = data.TOKEN
+  const token = data.TOKEN;
 
   const onChange = (e) => {
     setSearchText(e.target.value);
@@ -20,8 +20,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        Authorization:
-          `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
       },
     };
@@ -39,8 +38,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDVhZDk0OTA3MjE1ZTExN2ZiM2E2ODUxZTA5ZTExYyIsInN1YiI6IjYxYzU4MTk5ZTcyZmU4MDA4NTcyZmIxNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.95IxkLrZnLinOPUjX0ppd1XSzVDwDIvKA0QYlUHfjF0",
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
       },
     };
@@ -94,6 +92,7 @@ function App() {
           Search
         </button>
       </div>
+      
       <div className="content">
         <ul id="list">
           {currentSearch
@@ -142,7 +141,10 @@ function App() {
                         ...selectedMovie,
                         cover: poster,
                         id: item.id,
-                        type: item.media_type === undefined ? selected.value : item.media_type,
+                        type:
+                          item.media_type === undefined
+                            ? selected.value
+                            : item.media_type,
                       }));
                       setOpenModal(true);
                     }}
@@ -151,7 +153,6 @@ function App() {
                     <p>{year}</p>
                     <span>{type}</span>
                   </li>
-                  
                 );
               })
             : null}
