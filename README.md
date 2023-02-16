@@ -22,13 +22,22 @@ You can view a live preview of this project [HERE](https://amissouri.com/what2wa
 ```
 Node 16.13.1 (or later)
 Internet Access (for API access)
+TMDB api key
 ```
+
+### How to get TMDB api key
+
+1. login/register on [TMDB](https://www.themoviedb.org)
+2. click your profile icon top right and go into settings
+3. navigate to 'API' on the left menu
+4. copy the 'API Read Access Token (v4 auth)'
 
 ## Installation
 
 ```
-Clone this repo and run the following:
+Clone this repo and do the following:
 npm ci
+put the api key from TMDB in TOKEN.json
 npm run dev
 ```
 
