@@ -79,6 +79,7 @@
   border-radius: 12px;
   text-align: center;
   background-color: #04050681;
+  cursor: pointer;
 }
 
 #list li:hover {
