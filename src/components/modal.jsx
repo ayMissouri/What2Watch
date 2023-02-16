@@ -71,7 +71,7 @@ function Modal({ closeModal, selectedMovie }) {
                   <span className="ratingP">
                     {" "}
                     {movieDetails.length > 0
-                      ? movieDetails[0].vote_average.toFixed(1)
+                      ? movieDetails[0].vote_average ? movieDetails[0].vote_average.toFixed(1) : ""
                       : ""}
                     /10
                   </span>{" "}
@@ -85,13 +85,13 @@ function Modal({ closeModal, selectedMovie }) {
               <div className="description">
                 <div className="column1">
                   {movieDetails.length > 0
-                    ? movieDetails[0].genres.map((genre, index) => {
+                    ? movieDetails[0].genres ? movieDetails[0].genres.map((genre, index) => {
                         return (
                           <p key={index} className="tag">
                             {genre.name}
                           </p>
                         );
-                      })
+                      }) : ""
                     : ""}
                 </div>
 
