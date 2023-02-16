@@ -4,6 +4,10 @@ A site that allows the user to search through movies &amp; Tv Shows and view det
 
 I decided to make this site as one of my favourite pasttime activities is watching movies and tv shows, however sometimes it may be difficult to find new content to watch with the vast amount that is available and thats when I had the idea for this site.
 
+## Live Preview
+
+You can view a live preview of this project [HERE](https://amissouri.com/what2watch.html).
+
 ## Features
 
 + Search for Movies, Tv Shows AND People all a once.
