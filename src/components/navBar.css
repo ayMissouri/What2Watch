@@ -31,7 +31,7 @@
 
 .menu {
   min-width: 250px;
-  min-height: 100%;
+  padding-bottom: 50px;
   background-color: #00000069;
   position: absolute;
   top: 0;

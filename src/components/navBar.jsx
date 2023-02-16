@@ -90,4 +90,4 @@ const Navbar = (props) => {
   );
 };
 
-export default {Navbar, updateMenu};
+export default Navbar;
