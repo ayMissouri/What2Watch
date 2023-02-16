@@ -57,7 +57,7 @@ function App() {
       )}
 
       <Navbar autoComplete={autoComplete} getList={getList} />
-      
+
       <div className="search">
         <input
           type="text"
@@ -139,7 +139,7 @@ function App() {
                         ...selectedMovie,
                         cover: poster,
                         id: item.id,
-                        type: item.media_type,
+                        type: item.media_type === undefined ? selected.value : item.media_type,
                       }));
                       setOpenModal(true);
                     }}
@@ -148,6 +148,7 @@ function App() {
                     <p>{year}</p>
                     <span>{type}</span>
                   </li>
+                  
                 );
               })
             : null}

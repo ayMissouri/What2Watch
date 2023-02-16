@@ -71,12 +71,12 @@ function Modal({ closeModal, selectedMovie }) {
                   <span className="ratingP">
                     {" "}
                     {movieDetails.length > 0
-                      ? movieDetails[0].vote_average ? movieDetails[0].vote_average.toFixed(1) : ""
+                      ? movieDetails[0].vote_average ? movieDetails[0].vote_average.toFixed(1) : 0
                       : ""}
                     /10
                   </span>{" "}
                   <span className="ratingAmount">
-                    ({movieDetails.length > 0 ? movieDetails[0].vote_count : ""}
+                    ({movieDetails.length > 0 ? movieDetails[0].vote_count ? movieDetails[0].vote_count : "There is no votes for people" : ""}
                     )
                   </span>
                 </div>
