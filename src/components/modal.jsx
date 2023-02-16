@@ -76,7 +76,7 @@ function Modal({ closeModal, selectedMovie }) {
                     /10
                   </span>{" "}
                   <span className="ratingAmount">
-                    ({movieDetails.length > 0 ? movieDetails[0].vote_count ? movieDetails[0].vote_count : "There is no votes for people" : ""}
+                    ({movieDetails.length > 0 ? movieDetails[0].vote_count ? movieDetails[0].vote_count : "There is no votes" : ""}
                     )
                   </span>
                 </div>
