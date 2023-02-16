@@ -34,23 +34,39 @@ npm run dev
 
 Search for Movies, Tv Shows and People all in one:
 
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/allInOneSearch.gif)
+
 Search for Movies only:
+
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/searchMoviesOnly.gif)
 
 Search for Tv Shows only:
 
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/searchTvOnly.gif)
+
 Search for People only:
+
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/searchPeopleOnly.gif)
 
 ### Top Rated
 
 Top Rated Movies:
 
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/topRatedMovies.gif)
+
 Top Rated Tv Shows:
+
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/topRatedTv.gif)
 
 ### Trending
 
 Trending Movies:
 
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/trendingMovies.gif)
+
 Trending Tv Shows:
+
+![](https://github.com/ayMissouri/What2Watch/blob/main/images/trendingTv.gif)
 
 ### Top Grossing
 
